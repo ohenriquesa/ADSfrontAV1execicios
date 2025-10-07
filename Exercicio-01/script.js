@@ -1,4 +1,4 @@
-//comecei criando uma função calcular para ficar tudo dentro dela
+//comecei criando uma função calcular para ficar tudo dentro
 
 function calcular() {
     const primeiroInput = document.getElementById('primeiro'); // agora peguei os meus elementos do HTML pelo ID
