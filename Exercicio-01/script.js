@@ -1,11 +1,18 @@
+//comecei criando uma função calcular para ficar tudo dentro
+
 function calcular() {
-    const primeiro = parseFloat(document.getElementById('primeiro').value);
-    const segundo = parseFloat(document.getElementById('segundo').value);
-    const operacao = document.getElementById('operacao').value;
+    const primeiroInput = document.getElementById('primeiro'); // agora peguei os meus elementos do HTML pelo ID
+    const segundoInput = document.getElementById('segundo');
+    const operacaoInput = document.getElementById('operacao'); 
     const resultadoFINAL = document.getElementById('resultado');
 
-    let resultado;
+    const primeiro = Number(primeiroInput.value); // usei Number com .value para transformar as string em numeros de verdade
+    const segundo = Number(segundoInput.value);
+    const operacao = operacaoInput.value; 
 
+    let resultado; // criei uma variavel para armazenar o resultado das operações
+
+    // um switch case para as operações
     switch (operacao) {
         case 'soma':
             resultado = primeiro + segundo;
@@ -23,8 +30,12 @@ function calcular() {
             }
             resultado = primeiro / segundo;
             break;
-
+        default:
+            resultadoFINAL.textContent = 'Escolha uma operação';
+            return;
     }
 
-    resultadoFINAL.textContent = `Resultado: ${resultado}`;
+    resultadoFINAL.textContent = `Resultado: ${resultado}`; 
+    // finalizo com um textContent para retornar o resultado no <p> que criei no html. 
 }
+
